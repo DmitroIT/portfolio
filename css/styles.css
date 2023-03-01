@@ -1,0 +1,33 @@
+@import url(./normalize.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+
+.header {
+    background-color: #F1F1F1;
+    padding-top: 46px;
+}
+.logo {
+}
+.header__nav {
+}
+.nav__item {
+}
+.list__item {
+}
+
