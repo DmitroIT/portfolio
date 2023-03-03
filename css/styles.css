@@ -5,6 +5,10 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #000000;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -27,22 +31,20 @@ a {
     padding: 0 30px;
 }
 
+
+
+.header {
+    width: 100%;
+    position: absolute;
+    top: 46px;
+    right: 0;
+}
 .flex__sb__fe {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
-
-.header {
-    background-color: #F1F1F1;
-    padding-top: 46px;
-    background-image: url(../images/hero/hero.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 494px;
-
-}
 
 .logo__title {
     font-size: 32px;
@@ -53,8 +55,11 @@ a {
     content: ".";
     width: 8px;
     height: 8px;
+    border-radius: 50%;
     color: #FDA300;
+    font-size: 8px;
 }
+
 
 .nav__item {
     margin-right: 0;
@@ -62,30 +67,63 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    column-gap: 50px;
 }
 
-.nav__item :last-child {
-    margin-right: 0;
+li .active {
+    color: #606060;
 }
 
-.list__item {
-    margin: 0 25px;
+
+/* advantage */
+.advantage {
+    background-color: #F1F1F1;
+    padding: 281px 0;
+    background-image: url(../images/hero/hero.png);
+    background-repeat: no-repeat;
+    background-position: 90% bottom;
+    background-size: 494px 613px;
 }
 
-.header__content {
+
+.advantage__content {
     max-width: 500px;
 }
 
-.header__title {
+.advantage__title {
     font-size: 44px;
     line-height: 66px;
     font-weight: 600;
-    margin: 200px 0 0 0;
 }
 
-.header__desc {
-    font-size: 14px;
+.advantage__desc {
     font-weight: 400;
     line-height: 28px;
-    margin: 20px 0 280px 0;
+    margin: 20px 0 0 0;
 }
+
+/* skills */
+.card__container{
+    display: flex;
+    column-gap: 30px;
+}
+.skills {
+    padding: 90px 0;
+    background-color: #ffffff;
+}
+.skills__card {
+    column-gap: 30px;
+}
+
+.skills__card-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 30px 0 10px 0;
+}
+.skills__card-desk {
+    line-height: 28px;
+    margin: 0;
+}
+
+
