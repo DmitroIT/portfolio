@@ -184,6 +184,7 @@ button:hover {
     margin: 80px 0 0 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     column-gap: 60px;
 }
 .socials img {
@@ -193,3 +194,13 @@ button:hover {
 .socials img:hover {
     opacity: 60%;
 }
+
+.social__desc {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 40px 0 0 0;
+    line-height: 21px;
+}
+
+
