@@ -2,12 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 
+* {
+    margin: 0;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     color: #000000;
-    margin: 0;
     padding: 0;
 }
 
@@ -20,7 +22,6 @@ li {
 }
 
 a {
-    text-decoration: none;
     color: #000000;
 }
 
@@ -38,6 +39,9 @@ a {
     position: absolute;
     top: 46px;
     right: 0;
+}
+.header a {
+    text-decoration: none;
 }
 .flex__sb__fe {
     display: flex;
@@ -123,7 +127,39 @@ li .active {
 }
 .skills__card-desk {
     line-height: 28px;
-    margin: 0;
+}
+
+/* portfolio */
+.portfolio {
+    background-color: #F1F1F1;
+    padding: 90px 0;
+}
+h3 {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 51px;
 }
 
 
+.portfolio__example-box {
+    max-width: 930px;
+    margin: 90px auto 0;
+}
+.portfolio__example-box:first-of-type {
+    margin-top: 73px;
+}
+.portfolio__link {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 0 0;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+/* footer */
+footer {
+    background-color: #ffffff;
+    padding: 90px 0;
+}
