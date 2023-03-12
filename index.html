@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/media.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <title>portfolio</title>
 </head>
 
@@ -17,12 +19,15 @@
                 <div class="logo"><a class="logo__title" href="#!">Kelvin</a></div>
                 <nav class="header__nav">
                     <ul class="nav__item">
-                        <li class="list__item"><a class="active" href="#">Home</a></li>
-                        <li class="list__item"><a href="#">Works</a></li>
+                        <li class="list__item"><a href="#">Home</a></li>
+                        <li class="list__item"><a href="#works">Works</a></li>
                         <li class="list__item"><a href="#">Services</a></li>
                         <li class="list__item"><a href="#">About</a></li>
-                        <li class="list__item"><a href="#">Contact</a></li>
+                        <li class="list__item"><a href="#contacts">Contact</a></li>
                     </ul>
+                    <div class="burger">
+                        <span></span>
+                    </div>
                 </nav>
             </div>
 
@@ -35,9 +40,14 @@
         <section class="advantage ">
             <div class="container">
                 <div class="advantage__content">
-                    <h1 class="advantage__title">Kelvin Kramer <br> Designer & Developer</h1>
-                    <p class="advantage__desc">I’m a portrait, fashion and lifestyle photographer living In New York
-                        City. During my thirteen year tenure here.</p>
+                    <div class="advantage__content-specification">
+                        <h1 class="advantage__title">Kelvin Kramer <br> Designer & Developer</h1>
+                        <p class="advantage__desc">I’m a portrait, fashion and lifestyle photographer living In New York
+                            City. During my thirteen year tenure here.</p>
+                    </div>
+                    <div class="advantage__portrait">
+                        <img src="./images/hero/hero.png" alt="photo">
+                    </div>
                 </div>
             </div>
         </section>
@@ -69,7 +79,7 @@
         <!-- portfolio -->
         <section class="portfolio">
             <div class="container">
-                <h3 class="portfolio__title">Portfolio</h3>
+                <h3 class="portfolio__title" id="works">Portfolio</h3>
                 <div class="portfolio__example">
                     <div class="portfolio__example-box">
                         <img src="./images/portfol/collection.jpg" alt="">
@@ -103,12 +113,12 @@
 
     </main>
     <footer class="footer">
-       <div class="container">
+        <div class="container">
             <div class="footer__container">
-                <h3 class="footer__title">Contacts</h3>
+                <h3 class="footer__title" id="contacts">Contacts</h3>
                 <p class="footer__desc">Want to know more or just chat?<br>
                     You are welcome!</p>
-                <button type="button">Send message</button>
+                <div class="button"><a class="btn" href="#!">Send message</a></div>
                 <div class="socials">
                     <a href="#!"><img src="./images/socials/LinkedIn.svg" alt="Linkedin link"></a>
                     <a href="#!"><img src="./images/socials/Instargam.svg" alt="Instargam link"></a>
@@ -119,10 +129,20 @@
                     LinkedIn, Instagram, Behance, Dribble
                 </p>
             </div>
-       </div>
+        </div>
     </footer>
 
-    <script src="./js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $(".burger").on("click", function (event) {
+                $(".burger, .nav__item").toggleClass("active");
+                $("body").toggleClass("lock");
+            })
+        });
+    </script>
 </body>
 
 </html>
+

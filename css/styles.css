@@ -3,6 +3,7 @@
 
 * {
   margin: 0;
+  /* border: 1px solid black; */
 }
 
 body {
@@ -12,6 +13,20 @@ body {
   color: #000000;
   padding: 0;
 }
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f9f9fd;
+}
+
+  body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #bbbbbb;
+  }
+  body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: #f9f9fd;
+  }
 
 ul,
 li {
@@ -42,7 +57,7 @@ a {
 .flex__sb__fe {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .logo__title {
@@ -51,12 +66,15 @@ a {
 }
 
 .logo::after {
-  content: ".";
+  display: inline-block;
+  content: "";
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  color: #fda300;
-  font-size: 8px;
+  background-color: #fda300;
+  position: relative;
+  bottom: -8px;
+  right: -4px;
 }
 
 .nav__item {
@@ -65,28 +83,78 @@ a {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  flex-wrap: wrap;
   column-gap: 50px;
 }
 
-li .active {
-  color: #606060;
+.header__nav {
+  display: flex;
+}
+.burger {
+  display: block;
+  cursor: pointer;
+  width: 33px;
+  height: 20px;
+  display: none;
+  position: relative;
+  left: 0;
+  top: 2px;
+  z-index: 3;
+}
+.burger span {
+  position: absolute;
+  top: 8px;
+  width: 100%;
+  height: 4px;
+  background-color: #000000;
+}
+
+.burger::after,
+.burger::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #000000;
+  transition: all 0.1s;
+}
+.burger::after {
+  bottom: 0;
+}
+.burger::before {
+  top: 0;
+}
+
+
+.burger.active::before {
+  top: 8px;
+  transform: rotateZ(225deg);
+}
+.burger.active::after {
+  transform: rotateZ(-225deg);
+  bottom: 8px;
+}
+.burger.active span {
+  transform: scale(0);
 }
 
 /* advantage */
 .advantage {
   background-color: #f1f1f1;
-  padding: 281px 0;
-  background-image: url(../images/hero/hero.png);
-  background-repeat: no-repeat;
-  background-position: 90% bottom;
-  background-size: 494px 613px;
+  padding: 157px 0 0 0;
 }
 
 .advantage__content {
+  max-width: 1168px;
+  display: flex;
+  justify-content: space-between;
+}
+.advantage__content-specification {
   max-width: 500px;
 }
 
 .advantage__title {
+  margin: 124px 0 0 0;
   font-size: 44px;
   line-height: 66px;
   font-weight: 600;
@@ -96,6 +164,14 @@ li .active {
   font-weight: 400;
   line-height: 28px;
   margin: 20px 0 0 0;
+}
+.advantage__portrait {
+  max-width: 494px;
+  height: auto;
+  font-size: 0;
+}
+.advantage__portrait img {
+  object-fit: cover;
 }
 
 /* skills */
@@ -125,10 +201,9 @@ li .active {
 .portfolio {
   background-color: #f1f1f1;
   padding: 90px 0;
+  text-align: center;
 }
 h3 {
-  display: flex;
-  justify-content: center;
   font-weight: 600;
   font-size: 34px;
   line-height: 51px;
@@ -141,47 +216,64 @@ h3 {
 .portfolio__example-box:first-of-type {
   margin-top: 73px;
 }
-.portfolio__link {
-  display: flex;
-  justify-content: center;
+.portfolio__link p {
   margin: 40px 0 0 0;
   font-size: 18px;
-  line-height: 27px;
+  line-height: 27px;  
+}
+.portfolio__link {
+  opacity: 100%;
+  transition: .3s;
+}
+.portfolio__link:hover {
+opacity: 60%;
 }
 
 /* footer */
 footer {
   background-color: #ffffff;
   padding: 90px 0;
+  text-align: center;
 }
 .footer__container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
+.footer__container p + p {
+  margin-top: 20px;
 }
 .footer__desc {
-    max-width: 296px;
-    margin: 40px auto 0;
-    text-align: center;
+    margin-top: 40px;
     line-height: 27px;
     font-size: 18px;
+    max-width: 500px;
 }
-button {
+.button {
     cursor: pointer;
     background-color: #070707;
-    color: #ffffff;
-    width: max-content;
-    margin: 40px auto 0;
+    display: inline-block;
+    /* width: max-content; */
+    margin-top: 40px;
     padding: 7.96px 23px;
     border-radius: 40px;
-    border: none;
-    transition: .2s;
+    transition: .2s ease-in;
 }
-button:hover {
+.button a {
+  color: #ffffff;
+  text-decoration: none;
+  
+} 
+.button:hover, button:focus {
     background-color: #606060;
 }
+.button:active {
+  background-color: #000000;
+  position: relative;
+  top: 1px;
+}
 .socials {
-    margin: 80px 0 0 0;
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,10 +288,7 @@ button:hover {
 }
 
 .social__desc {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 40px 0 0 0;
+    margin-top: 40px;
     line-height: 21px;
 }
 
