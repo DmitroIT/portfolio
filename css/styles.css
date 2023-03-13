@@ -1,16 +1,26 @@
 @import url(./normalize.css);
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+:root {
+  --bc_grey: #f1f1f1;
+  --bc_white: #FFFFFF;
+  --black: #000000;
+  --normal: 400;
+  --semi_bold: 600;
+}
+
 * {
   margin: 0;
-  /* border: 1px solid black; */
+}
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: var(--normal);
   font-size: 14px;
-  color: #000000;
+  color: var(--black);
   padding: 0;
 }
 body::-webkit-scrollbar {
@@ -23,7 +33,7 @@ body::-webkit-scrollbar {
     background-color: #bbbbbb;
   }
   body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
   border-radius: 10px;
   background-color: #f9f9fd;
   }
@@ -36,7 +46,7 @@ li {
 }
 
 a {
-  color: #000000;
+  color: var(--black);
 }
 
 .container {
@@ -140,7 +150,7 @@ a {
 
 /* advantage */
 .advantage {
-  background-color: #f1f1f1;
+  background-color: var(--bc_grey);
   padding: 157px 0 0 0;
 }
 
@@ -157,11 +167,11 @@ a {
   margin: 124px 0 0 0;
   font-size: 44px;
   line-height: 66px;
-  font-weight: 600;
+  font-weight: var(--semi_bold);
 }
 
 .advantage__desc {
-  font-weight: 400;
+  font-weight: var(--normal);
   line-height: 28px;
   margin: 20px 0 0 0;
 }
@@ -181,7 +191,7 @@ a {
 }
 .skills {
   padding: 90px 0;
-  background-color: #ffffff;
+  background-color: var(--bc_white);
 }
 .skills__card {
   column-gap: 30px;
@@ -189,7 +199,7 @@ a {
 
 .skills__card-title {
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: var(--semi_bold);
   font-size: 24px;
   margin: 30px 0 10px 0;
 }
@@ -199,12 +209,12 @@ a {
 
 /* portfolio */
 .portfolio {
-  background-color: #f1f1f1;
+  background-color: var(--bc_grey);
   padding: 90px 0;
   text-align: center;
 }
 h3 {
-  font-weight: 600;
+  font-weight: var(--semi_bold);
   font-size: 34px;
   line-height: 51px;
 }
@@ -231,7 +241,7 @@ opacity: 60%;
 
 /* footer */
 footer {
-  background-color: #ffffff;
+  background-color: var(--bc_white);
   padding: 90px 0;
   text-align: center;
 }
@@ -253,7 +263,6 @@ footer {
     cursor: pointer;
     background-color: #070707;
     display: inline-block;
-    /* width: max-content; */
     margin-top: 40px;
     padding: 7.96px 23px;
     border-radius: 40px;
