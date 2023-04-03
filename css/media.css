@@ -63,6 +63,9 @@
     .list__item {
         margin: 40px 0;
     }
+    .list__item-link::after {
+        display: none;
+    }
     .list__item:nth-of-type(1) {
         margin-top: 0;
     }

@@ -96,8 +96,19 @@ a {
   flex-wrap: wrap;
   column-gap: 50px;
 }
-.animate__animated:active {
-  animation-name: animate__fadeIn;
+.list__item-link::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fda300;
+  position: relative;
+  top: 1px;
+  transform: rotateY(90deg);
+  transition: all ease 0.3s;
+}
+.list__item-link:hover::after {
+  transform: rotateY(0);
 }
 .header__nav {
   display: flex;
