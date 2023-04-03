@@ -1,4 +1,3 @@
-
 // burger
 $(document).ready(function () {
     $(".burger").on("click", function (event) {
